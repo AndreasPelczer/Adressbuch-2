@@ -17,7 +17,7 @@ class HomeActivity : AppCompatActivity() {
         val username = intent.getStringExtra("username")
 
         // Begrüssungsnachricht anzeigen
-        val successMessage = "Erfolgreich eingeloggt! Herzlich willkommen, $username!"
+        val successMessage = "Herzlich willkommen, $username!"
         binding.welcomeTextView.text = successMessage
     }
 }
