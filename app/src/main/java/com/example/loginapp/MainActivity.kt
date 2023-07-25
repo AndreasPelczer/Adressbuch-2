@@ -22,9 +22,9 @@ class MainActivity : AppCompatActivity() {
             val isValidLogin = isValidLogin(username, password)
 
             if (isValidLogin) {
-                showMainPage()
+                showMainPage(username)
             } else {
-                val errorMessage = "Falscher name oder password!"
+                val errorMessage = "Falscher Name oder Passwort!"
                 binding.loginTv.text = errorMessage
                 Log.d("testlog","login!")
             }
@@ -35,9 +35,10 @@ class MainActivity : AppCompatActivity() {
         return username == "user" && password == "1234"
     }
 
-    private fun showMainPage() {
-        val username = ""
-        val successMessage = "Erfolgreich eingeloggt!$username!"
-        binding.loginTv.text = successMessage
+    private fun showMainPage(username: String) {
+        val intent = Intent(this, HomeActivity::class.java)
+        intent.putExtra("username", username)
+        startActivity(intent)
+        finish() // Beende die MainActivity, damit der Benutzer nicht zurücknavigieren kann
     }
 }

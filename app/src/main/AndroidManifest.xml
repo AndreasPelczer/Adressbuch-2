@@ -23,6 +23,11 @@
             </intent-filter>
         </activity>
 
+        <!-- Die HomeActivity hinzufügen -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>
