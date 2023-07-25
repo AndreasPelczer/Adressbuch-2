@@ -31,9 +31,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private val userList: MutableList<Pair<String, String>> = mutableListOf(
+        Pair("user", "password"),
+        Pair("user1", "password1"),
+        Pair("user2", "password2"),
+        Pair("user3", "password3")
+    )
+
     private fun isValidLogin(username: String, password: String): Boolean {
-        return username == "user" && password == "1234"
+        for (user in userList) {
+            if (user.first == username && user.second == password) {
+                return true // Login gültig
+            }
+        }
+        return false // Login ungültig
     }
+
 
     private fun showMainPage(username: String) {
         val intent = Intent(this, HomeActivity::class.java)
