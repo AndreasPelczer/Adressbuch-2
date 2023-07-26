@@ -32,10 +32,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val userList: MutableList<Pair<String, String>> = mutableListOf(
-        Pair("user", "password"),
-        Pair("user1", "password1"),
-        Pair("user2", "password2"),
-        Pair("user3", "password3")
+        Pair("admin", "password"),
+        Pair("alex", "password1"),
+        Pair("andreas", "password2"),
+        Pair("ingo", "password3")
     )
 
     private fun isValidLogin(username: String, password: String): Boolean {
