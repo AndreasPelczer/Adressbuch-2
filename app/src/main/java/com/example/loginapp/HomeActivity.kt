@@ -42,6 +42,12 @@ class HomeActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
+                R.id.settings -> {
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                    true
+                }
                 else -> false
             }
         }

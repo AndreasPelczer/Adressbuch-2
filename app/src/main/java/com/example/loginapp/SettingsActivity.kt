@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.loginapp.databinding.ProfileActivityBinding
 
-open class UserProfil : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: ProfileActivityBinding
 
@@ -13,10 +13,12 @@ open class UserProfil : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ProfileActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Benutzername aus den Intent-Extras abrufen
         val username = intent.getStringExtra("username")
-        val successMessage = "Dein Profil, $username"
-        //hier profil informationen anzeigen lassen.//
+        val successMessage = "Deine Einstellungen, $username"
         binding.welcomeProfile.text = successMessage
+
         binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.profile -> {
@@ -27,12 +29,6 @@ open class UserProfil : AppCompatActivity() {
                 }
                 R.id.home -> {
                     val intent = Intent(this, HomeActivity::class.java)
-                    intent.putExtra("username", username)
-                    startActivity(intent)
-                    true
-                }
-                R.id.settings -> {
-                    val intent = Intent(this, SettingsActivity::class.java)
                     intent.putExtra("username", username)
                     startActivity(intent)
                     true

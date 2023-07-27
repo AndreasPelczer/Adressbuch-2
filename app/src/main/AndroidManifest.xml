@@ -33,6 +33,7 @@
             android:name="com.example.loginapp.UserProfil"
             android:label="Profile"
             tools:ignore="Instantiatable" />
+        <activity android:name=".SettingsActivity" />
 
     </application>
 
