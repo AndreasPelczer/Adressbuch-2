@@ -26,13 +26,13 @@ class MainActivity : AppCompatActivity() {
             } else {
                 val errorMessage = "Falscher Name oder Passwort!"
                 binding.loginTv.text = errorMessage
-                Log.d("testlog","login!")
+                Log.d("testlog", "login!")
             }
         }
     }
 
     private val userList: MutableList<Pair<String, String>> = mutableListOf(
-        Pair("admin", "password"),
+        Pair("admin", "1234"),
         Pair("alex", "password1"),
         Pair("andreas", "password2"),
         Pair("ingo", "password3")
@@ -47,11 +47,10 @@ class MainActivity : AppCompatActivity() {
         return false // Login ungültig
     }
 
-
     private fun showMainPage(username: String) {
         val intent = Intent(this, HomeActivity::class.java)
         intent.putExtra("username", username)
         startActivity(intent)
-        finish() // Beende die MainActivity, damit der Benutzer nicht zurücknavigieren kann
+        finish() // Beende die com.example.loginapp.MainActivity, damit der Benutzer nicht zurücknavigieren kann
     }
 }
